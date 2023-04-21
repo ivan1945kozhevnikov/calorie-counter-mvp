@@ -1,4 +1,10 @@
+import createElement from '../utils/render.js';
+
 class ResultView {
+    constructor() {
+        this.element = this.getElement();
+    }
+
     // eslint-disable-next-line class-methods-use-this
     _getTemplate() {
         return ` <section class="counter__result counter__result--hidden">
@@ -24,6 +30,10 @@ class ResultView {
           </li>
         </ul>
         </section>`;
+    }
+
+    getElement() {
+        return createElement(this._getTemplate());
     }
 }
 console.log(ResultView);
