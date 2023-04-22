@@ -1,5 +1,5 @@
 const createElement = (template) => {
-    const element = document.createElement(template);
+    const element = document.createElement(template.content);
     return element;
 };
 

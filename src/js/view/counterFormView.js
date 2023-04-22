@@ -2,7 +2,7 @@ import createElement from '../utils/render.js';
 
 class CounterFormView {
     constructor() {
-        this.element = this.getElement();
+        this.element = null;
     }
 
     // eslint-disable-next-line class-methods-use-this
@@ -19,7 +19,8 @@ class CounterFormView {
     }
 
     getElement() {
-        return createElement(this._getTemplate());
+        this.element = createElement(this._getTemplate());
+        return this.element;
     }
 }
 console.log(CounterFormView);

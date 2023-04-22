@@ -2,7 +2,7 @@ import createElement from '../utils/render.js';
 
 class ResultView {
     constructor() {
-        this.element = this.getElement();
+        this.element = null;
     }
 
     // eslint-disable-next-line class-methods-use-this
@@ -33,7 +33,9 @@ class ResultView {
     }
 
     getElement() {
-        return createElement(this._getTemplate());
+        this.element = createElement(this._getTemplate());
+        return this.element;
     }
 }
+
 console.log(ResultView);
