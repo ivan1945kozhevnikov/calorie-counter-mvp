@@ -4,4 +4,8 @@ const createElement = (template) => {
     return element.firstChild;
 };
 
-export default createElement;
+const render = (parentNode, childNode) => {
+    parentNode.appendChild(childNode);
+};
+
+export { render, createElement };

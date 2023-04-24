@@ -1,4 +1,4 @@
-import createElement from '../utils/render.js';
+import { createElement } from '../utils/render.js';
 
 class CounterFormView {
     constructor() {
@@ -23,4 +23,5 @@ class CounterFormView {
         return this.element;
     }
 }
-console.log(CounterFormView);
+
+export default CounterFormView;

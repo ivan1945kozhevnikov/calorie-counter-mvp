@@ -1,4 +1,4 @@
-import createElement from '../utils/render.js';
+import { createElement } from '../utils/render.js';
 
 class AppView {
     constructor() {
@@ -16,4 +16,5 @@ class AppView {
         return this.element;
     }
 }
-console.log(AppView);
+
+export default AppView;
