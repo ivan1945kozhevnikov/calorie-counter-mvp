@@ -5,7 +5,7 @@ const createElement = (template) => {
 };
 
 const render = (parentNode, childNode) => {
-    parentNode.appendChild(childNode);
+    parentNode.append(childNode);
 };
 
 export { render, createElement };

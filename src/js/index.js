@@ -4,10 +4,10 @@ import CounterFormView from './view/CounterFormView.js';
 import ResultView from './view/resultView.js';
 
 const main = document.querySelector('.main');
-const app = new AppView();
-const form = new CounterFormView();
-const result = new ResultView();
+const appView = new AppView();
+const formView = new CounterFormView();
+const resultView = new ResultView();
 
-render(main, app.getElement());
-render(app.getElement(), form.getElement());
-render(main, result.getElement());
+render(main, appView.getElement());
+render(appView.getElement(), formView.getElement());
+render(appView.getElement(), resultView.getElement());

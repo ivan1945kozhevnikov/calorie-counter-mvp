@@ -12,7 +12,9 @@ class AppView {
     }
 
     getElement() {
-        this.element = createElement(this._getTemplate());
+        if (!this.element) {
+            this.element = createElement(this._getTemplate());
+        }
         return this.element;
     }
 }
