@@ -7,7 +7,7 @@ class ResultView {
 
     // eslint-disable-next-line class-methods-use-this
     _getTemplate() {
-        return ` <section class="counter__result counter__result--hidden">
+        return `<section class="counter__result counter__result--hidden">
         <h2 class="heading">Ваша норма калорий</h2>
         <ul class="counter__result-list">
           <li class="counter__result-item">
