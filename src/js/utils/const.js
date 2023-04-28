@@ -1,4 +1,4 @@
-const genderInputs = [
+const gender = [
     {
         id: 'gender-male',
         value: 'male',
@@ -12,25 +12,25 @@ const genderInputs = [
         label: 'Женщина',
     },
 ];
-const groupInputs = [
+const physicalCharacteristics = [
     {
         id: 'age',
         name: 'age',
         label: 'Возраст',
-        span: 'лет',
+        unit: 'лет',
     },
     {
         id: 'height',
         name: 'height',
         label: 'Рост',
-        span: 'см',
+        unit: 'см',
     },
     {
         id: 'weight',
         name: 'weight',
         label: 'Вес',
-        span: 'кг',
+        unit: 'кг',
     },
 ];
 
-export { genderInputs, groupInputs };
+export { gender, physicalCharacteristics };

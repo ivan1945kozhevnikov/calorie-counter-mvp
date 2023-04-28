@@ -1,9 +1,9 @@
 import { createElement } from '../utils/render.js';
 
 class CounterFormView {
-    constructor(gender, input) {
+    constructor(gender, physicalCharacteristics) {
         this.gender = gender;
-        this.input = input;
+        this.physicalCharacteristics = physicalCharacteristics;
         this.element = null;
     }
 
@@ -38,13 +38,13 @@ class CounterFormView {
               <fieldset class="form__item form__parameters" name="parameters">
               <legend class="visually-hidden">Физические параметры</legend>
               <div class="inputs-group">
-              ${this.input
+              ${this.physicalCharacteristics
                   .map(
-                      ({ id, name, label, span }) =>
+                      ({ id, name, label, unit }) =>
                           `<div class="input">
                 <div class="input__heading">
                   <label class="heading" for="age"> ${label} </label>
-                  <span class="input__heading-unit"> ${span} </span>
+                  <span class="input__heading-unit"> ${unit} </span>
                 </div>
                 <div class="input__wrapper">
                   <input
