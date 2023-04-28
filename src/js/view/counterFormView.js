@@ -1,9 +1,10 @@
 import { createElement } from '../utils/render.js';
 
 class CounterFormView {
-    constructor(gender, physicalCharacteristics) {
+    constructor(gender, physicalCharacteristics, physicalActivities) {
         this.gender = gender;
         this.physicalCharacteristics = physicalCharacteristics;
+        this.physicalActivities = physicalActivities;
         this.element = null;
     }
 
@@ -62,6 +63,32 @@ class CounterFormView {
                   .join('')}
               </div>
               </fieldset>
+              <fieldset class="form__item">
+              <legend class="heading">Физическая активность</legend>
+              <ul class="radios-group">
+              ${this.physicalActivities
+                  .map(
+                      ({ id, value, checked, label, description }) =>
+                          `<li class="radio">
+                <div class="radio__wrapper">
+                  <input
+                    id="${id}"
+                    name="activity"
+                    value="${value}"
+                    type="radio"
+                    checked=${checked}} 
+                    required
+                  />
+                  <label for="activity-minimal"> ${label} </label>
+                </div>
+                <p class="radio__description">
+                  ${description}
+                </p>
+              </li>`
+                  )
+                  .join('')}
+              </ul>
+            </fieldset>
         </form>
       </article>`;
     }
