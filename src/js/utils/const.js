@@ -12,5 +12,25 @@ const genderInputs = [
         label: 'Женщина',
     },
 ];
+const groupInputs = [
+    {
+        id: 'age',
+        name: 'age',
+        label: 'Возраст',
+        span: 'лет',
+    },
+    {
+        id: 'height',
+        name: 'height',
+        label: 'Рост',
+        span: 'см',
+    },
+    {
+        id: 'weight',
+        name: 'weight',
+        label: 'Вес',
+        span: 'кг',
+    },
+];
 
-export default genderInputs;
+export { genderInputs, groupInputs };

@@ -1,8 +1,9 @@
 import { createElement } from '../utils/render.js';
 
 class CounterFormView {
-    constructor(array) {
-        this.array = array;
+    constructor(gender, input) {
+        this.gender = gender;
+        this.input = input;
         this.element = null;
     }
 
@@ -17,23 +18,50 @@ class CounterFormView {
          <div class="form__item">
               <h2 class="heading">Пол</h2>
               <ul class="switcher">
-             ${this.array
+             ${this.gender
                  .map(
-                     (item) =>
+                     ({ id, value, checked, label }) =>
                          `<li class="switcher__item">
-            <input 
-              id = "${item.id}" 
-              name = "gender" 
-              value = "${item.value}"
-              type = "radio" 
-              checked = ${item.checked}
-              required
-            />
-            <label for="gender-male"> ${item.label} </label></li>`
+        <input 
+          id = "${id}" 
+          name = "gender" 
+          value = "${value}"
+          type = "radio" 
+          checked = ${checked}
+          required
+        />
+        <label for="gender-male"> ${label} </label></li>`
                  )
                  .join('')}
               </ul>
               </div>
+              <fieldset class="form__item form__parameters" name="parameters">
+              <legend class="visually-hidden">Физические параметры</legend>
+              <div class="inputs-group">
+              ${this.input
+                  .map(
+                      ({ id, name, label, span }) =>
+                          `<div class="input">
+                <div class="input__heading">
+                  <label class="heading" for="age"> ${label} </label>
+                  <span class="input__heading-unit"> ${span} </span>
+                </div>
+                <div class="input__wrapper">
+                  <input
+                    type="text"
+                    id="${id}"
+                    name="${name}"
+                    placeholder="0"
+                    inputmode="decimal"
+                    maxlength="3"
+                    required
+                  />
+                </div>
+              </div>`
+                  )
+                  .join('')}
+              </div>
+              </fieldset>
         </form>
       </article>`;
     }
