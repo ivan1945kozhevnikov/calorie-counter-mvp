@@ -6,24 +6,21 @@ import {
 
 class CounterFormModel {
     constructor() {
-        this.genderValue = null;
-        this.physicalCharacteristicValue = null;
-        this.physicalActivityValue = null;
+        this._gender = gender;
+        this._physicalCharacteristics = physicalCharacteristics;
+        this._physicalActivities = physicalActivities;
     }
 
-    _findGenderValue() {
-        this.genderValue = gender;
-        return this.genderValue;
+    getGender() {
+        return this._gender;
     }
 
-    _findPhysicalCharacteristicsValue() {
-        this.physicalCharacteristicValue = physicalCharacteristics;
-        return this.physicalCharacteristicValue;
+    getPhysicalCharacteristics() {
+        return this._physicalCharacteristics;
     }
 
-    _findPhysicalActivitiesValue() {
-        this.physicalActivityValue = physicalActivities;
-        return this.physicalActivityValue;
+    getPhysicalActivities() {
+        return this._physicalActivities;
     }
 }
 
