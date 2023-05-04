@@ -10,7 +10,8 @@ const appView = new AppView();
 const formView = new CounterFormView(
     formModel.getGender(),
     formModel.getPhysicalCharacteristics(),
-    formModel.getPhysicalActivities()
+    formModel.getPhysicalActivities(),
+    formModel.getvalueGender()
 );
 const resultView = new ResultView();
 

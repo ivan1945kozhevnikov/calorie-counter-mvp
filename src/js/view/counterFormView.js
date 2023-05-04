@@ -1,10 +1,16 @@
 import { createElement } from '../utils/render.js';
 
 class CounterFormView {
-    constructor(gender, physicalCharacteristics, physicalActivities) {
+    constructor(
+        gender,
+        physicalCharacteristics,
+        physicalActivities,
+        valueGender
+    ) {
         this.gender = gender;
         this.physicalCharacteristics = physicalCharacteristics;
         this.physicalActivities = physicalActivities;
+        this.valueGender = valueGender;
         this.element = null;
     }
 
@@ -20,19 +26,29 @@ class CounterFormView {
               <h2 class="heading">Пол</h2>
               <ul class="switcher">
              ${this.gender
-                 .map(
-                     ({ id, value, checked, label }) =>
-                         `<li class="switcher__item">
-        <input 
-          id = "${id}" 
-          name = "gender" 
-          value = "${value}"
-          type = "radio" 
-          checked = ${checked}
-          required
-        />
-        <label for="gender-male"> ${label} </label></li>`
-                 )
+                 .map(({ id, value, label }) => {
+                     if (value === this.valueGender) {
+                         return `<li class="switcher__item">
+                        <input 
+                          id = "${id}" 
+                          name = "gender" 
+                          value = "${value}"
+                          type = "radio" 
+                          checked
+                          required
+                        />
+                        <label for="gender-male"> ${label} </label></li>`;
+                     }
+                     return `<li class="switcher__item">
+                     <input 
+                       id = "${id}" 
+                       name = "gender" 
+                       value = "${value}"
+                       type = "radio"
+                       required
+                     />
+                     <label for="gender-male"> ${label} </label></li>`;
+                 })
                  .join('')}
               </ul>
               </div>
