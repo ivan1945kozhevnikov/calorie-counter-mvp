@@ -11,7 +11,8 @@ const formView = new CounterFormView(
     formModel.getGender(),
     formModel.getPhysicalCharacteristics(),
     formModel.getPhysicalActivities(),
-    formModel.getSelectedGender()
+    formModel.getSelectedGender(),
+    formModel.getSelectedPhysicalActivity()
 );
 const resultView = new ResultView();
 
