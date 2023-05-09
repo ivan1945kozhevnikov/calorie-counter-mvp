@@ -11,7 +11,7 @@ class CounterFormModel {
         this._physicalActivities = physicalActivities;
         this._selectedGender = 'male';
         this._selectedPhysicalActivity = 'min';
-        this._sentPhysicalCharacteristics = {
+        this._enteredPhysicalCharacteristics = {
             age: '',
             height: '',
             weight: '',
@@ -38,8 +38,8 @@ class CounterFormModel {
         return this._selectedPhysicalActivity;
     }
 
-    getSentPhysicalCharacteristics() {
-        return this._sentPhysicalCharacteristics;
+    getEnteredPhysicalCharacteristics() {
+        return this._enteredPhysicalCharacteristics;
     }
 }
 

@@ -7,14 +7,14 @@ class CounterFormView {
         physicalActivities,
         selectedGender,
         selectedPhysicalActivity,
-        sentPhysicalCharacteristics
+        enteredPhysicalCharacteristics
     ) {
         this.gender = gender;
         this.physicalCharacteristics = physicalCharacteristics;
         this.physicalActivities = physicalActivities;
         this.selectedGender = selectedGender;
         this.selectedPhysicalActivity = selectedPhysicalActivity;
-        this.sentPhysicalCharacteristics = sentPhysicalCharacteristics;
+        this.enteredPhysicalCharacteristics = enteredPhysicalCharacteristics;
         this.element = null;
     }
 
@@ -65,7 +65,7 @@ class CounterFormView {
                     placeholder="0"
                     inputmode="decimal"
                     maxlength="3"
-                    value = "${this.sentPhysicalCharacteristics[id]}"
+                    value = "${this.enteredPhysicalCharacteristics[id]}"
                     required
                   />
                 </div>
