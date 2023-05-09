@@ -1,10 +1,20 @@
 import { createElement } from '../utils/render.js';
 
 class CounterFormView {
-    constructor(gender, physicalCharacteristics, physicalActivities) {
+    constructor(
+        gender,
+        physicalCharacteristics,
+        physicalActivities,
+        selectedGender,
+        selectedPhysicalActivity,
+        enteredPhysicalCharacteristics
+    ) {
         this.gender = gender;
         this.physicalCharacteristics = physicalCharacteristics;
         this.physicalActivities = physicalActivities;
+        this.selectedGender = selectedGender;
+        this.selectedPhysicalActivity = selectedPhysicalActivity;
+        this.enteredPhysicalCharacteristics = enteredPhysicalCharacteristics;
         this.element = null;
     }
 
@@ -21,17 +31,17 @@ class CounterFormView {
               <ul class="switcher">
              ${this.gender
                  .map(
-                     ({ id, value, checked, label }) =>
+                     ({ id, value, label }) =>
                          `<li class="switcher__item">
-        <input 
-          id = "${id}" 
-          name = "gender" 
-          value = "${value}"
-          type = "radio" 
-          checked = ${checked}
-          required
-        />
-        <label for="gender-male"> ${label} </label></li>`
+              <input 
+                id = "${id}" 
+                name = "gender" 
+                value = "${value}"
+                type = "radio" 
+                ${value === this.selectedGender ? 'checked' : ''}
+                required
+              />
+              <label for="gender-male"> ${label} </label></li>`
                  )
                  .join('')}
               </ul>
@@ -55,6 +65,7 @@ class CounterFormView {
                     placeholder="0"
                     inputmode="decimal"
                     maxlength="3"
+                    value = "${this.enteredPhysicalCharacteristics[id]}"
                     required
                   />
                 </div>
@@ -68,7 +79,7 @@ class CounterFormView {
               <ul class="radios-group">
               ${this.physicalActivities
                   .map(
-                      ({ id, value, checked, label, description }) =>
+                      ({ id, value, label, description }) =>
                           `<li class="radio">
                 <div class="radio__wrapper">
                   <input
@@ -76,7 +87,7 @@ class CounterFormView {
                     name="activity"
                     value="${value}"
                     type="radio"
-                    checked=${checked}} 
+                    ${value === this.selectedPhysicalActivity ? 'checked' : ''}
                     required
                   />
                   <label for="activity-minimal"> ${label} </label>
