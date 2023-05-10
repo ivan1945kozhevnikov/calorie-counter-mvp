@@ -1,33 +1,25 @@
 import { createElement } from '../utils/render.js';
 
 class ResultView {
-    constructor() {
+    constructor(result, countedResult) {
+        this.result = result;
+        this.countedResult = countedResult;
         this.element = null;
     }
 
-    // eslint-disable-next-line class-methods-use-this
     _getTemplate() {
         return `<section class="counter__result counter__result--hidden">
         <h2 class="heading">Ваша норма калорий</h2>
         <ul class="counter__result-list">
-          <li class="counter__result-item">
-            <h3><span id="calories-norm">3 800</span> ккал</h3>
-            <p>поддержание веса</p>
-          </li>
-          <li class="counter__result-item">
-            <h3>
-              <span id="calories-minimal">3 300</span>
-              ккал
-            </h3>
-            <p>снижение веса</p>
-          </li>
-          <li class="counter__result-item">
-            <h3>
-              <span id="calories-maximal">4 000</span>
-              ккал
-            </h3>
-            <p>набор веса</p>
-          </li>
+          ${this.result
+              .map(
+                  ({ id, description }) =>
+                      `<li class="counter__result-item">
+          <h3><span id="${id}">${this.countedResult[id]}</span> ккал</h3>
+          <p>${description}</p>
+        </li>`
+              )
+              .join('')}
         </ul>
         </section>`;
     }
