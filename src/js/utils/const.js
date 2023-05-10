@@ -62,5 +62,19 @@ const physicalActivities = [
         description: 'Больше 6 тренировок в неделю и физическая работа',
     },
 ];
+const result = [
+    {
+        id: 'calories-norm',
+        description: 'поддержание веса',
+    },
+    {
+        id: 'calories-minimal',
+        description: 'снижение веса',
+    },
+    {
+        id: 'calories-maximal',
+        description: 'набор веса',
+    },
+];
 
-export { gender, physicalCharacteristics, physicalActivities };
+export { gender, physicalCharacteristics, physicalActivities, result };
